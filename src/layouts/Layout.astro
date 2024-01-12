@@ -1,0 +1,75 @@
+---
+import BlurCircle from "@/components/shared/BlurCircle.astro";
+import theme from "@/data/theme";
+import SEOTags from "@/components/seo/SEOTags.astro";
+import type { HeadTags } from "@/utils/types/HeadTags";
+
+import "@fontsource/open-sans";
+import "@/styles/tailwind.css";
+import "@/styles/post.css";
+
+export type Props = HeadTags;
+
+const headTags = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <SEOTags {...headTags} />
+
+  <body
+    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+  > 
+    <section class="flex flex-col items-center gap-5 sm:flex-row">
+      <div
+        class="relative h-44 w-44 overflow-hidden rounded-full border-8 border-white bg-indigo-100 shadow-lg dark:border-gray-900/80 dark:bg-gray-700/60"
+      >
+        <span
+          style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"
+        >
+          <img
+            alt="steve"
+            sizes="100vw"
+            srcset="public/perfil.jpeg"
+            src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.2d4d367d.png&w=3840&q=30"
+            decoding="async"
+            data-nimg="fill"
+            class="rounded-full drop-shadow-2xl"
+            style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"
+          />
+        </span>
+      </div>
+      <div class="flex flex-col items-center gap-3 sm:items-start">
+        <div class="items-left flex flex-col gap-2">
+          <h1
+            class="text-center text-2xl font-bold text-slate-600 dark:text-slate-100 sm:text-left sm:text-4xl"
+          >
+            Samir Medina 🎮🖥️
+          </h1>
+          <p
+            class="max-w-xl rounded-2xl text-sm text-slate-700 dark:text-slate-300 sm:text-lg"
+          >
+            "Soy un joven apasionado por el desarrollo web y la ciberseguridad."
+          </p>
+        </div>
+        <br />
+        <div class="flex gap-3">
+          <a
+            class="flex items-center gap-3 rounded-lg bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-500 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+            href="public/CurriculumV.pdf"
+            download="CurriculumV.pdf"
+          >
+            <div class="i-fa-pro:file-user z-auto text-xl sm:text-lg"></div>
+            <i class="fas fa-file-alt"></i> Curriculum Vitae​​​
+          </a>
+        </div>
+      </div>
+    </section>
+    <hr
+      class="rounded-md border border-dotted border-gray-300 dark:border-gray-600"
+    />
+    <BlurCircle position="top" color={theme.colors.blur.top} />
+    <BlurCircle position="bottom" color={theme.colors.blur.top} />
+    <slot />
+  </body>
+</html>

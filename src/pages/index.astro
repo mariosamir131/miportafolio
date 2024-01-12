@@ -1,0 +1,619 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+
+import presentation from "@/data/presentation";
+import presentationE from "@/data/presentationExperence";
+import presentationEA from "@/data/presentationEA";
+
+const posts = (await getCollection("posts")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+---
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha384-...tu-integridad-aqui..."
+  crossorigin="anonymous"
+/>
+
+<Layout>
+  <main class="flex flex-col gap-20">
+    <article
+      class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
+    >
+      {
+        presentation.profile && (
+          <Image
+            src={presentation.profile}
+            class="w-1/4 self-center rounded-full"
+            alt="Your Profile"
+            width="200"
+            height="200"
+          />
+        )
+      }
+
+      <div class="flex flex-col gap-8">
+        <h2 class="text-3xl font-bold text-slate-800 dark:text-white">
+          ¿Quién soy? <i class="fas fa-search"></i>
+        </h2>
+        <section class="flex items-center justify-between">
+          <h2
+            class="w-auto max-w-[50ch] text-lg leading-6 text-slate-600 dark:text-slate-300"
+            set:html={convertAsteriskToStrongTag(presentation.description)}
+          />
+        </section>
+      </div>
+    </article>
+    <article class="flex flex-col gap-8">
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-white">
+        Conocimientos en Tecnologias <i class="fas fa-briefcase"></i>
+      </h2>
+      <div class="flex flex-col gap-8">
+        <h2
+          class="w-auto max-w-[50ch] text-lg leading-6 text-slate-600 dark:text-slate-300"
+          set:html={convertAsteriskToStrongTag(presentationE.description)}
+        />
+        <div class="flex gap-3">
+          <div class="group/tooltip relative">
+            <img
+              src="public/html.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >HTML</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/css.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >CSS</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/boostra.png"
+              width="22"
+              height="22"
+              class="h-11 w-12"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Bootstrap</span
+            >
+          </div>
+
+          <div class="group/tooltip relative">
+            <img
+              src="public/java.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Java</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/c++.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >C++</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/github.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Github</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/mysql.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >MySQL</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/oracle.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Oracle</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/sqlserver.png"
+              width="22"
+              height="22"
+              class="h-11 w-12"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >SQL Server</span
+            >
+          </div>
+        </div>
+        <h2
+          class="w-auto max-w-[50ch] text-lg leading-6 text-slate-600 dark:text-slate-300"
+          set:html={convertAsteriskToStrongTag(presentationEA.description)}
+        />
+        <!--Codigo de tecnologias que estoy aprendiendo -->
+        <div class="flex gap-3">
+          <div class="group/tooltip relative">
+            <img src="public/js.png" width="22" height="22" class="h-11 w-11" />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >JavaScript</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/python.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Python</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/django.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Django</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="public/astro.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Astro</span
+            >
+          </div>
+        </div>
+      </div>
+    </article>
+    <!--
+      <i class="fas fa-laptop-code"></i>
+     -->
+    <article class="flex flex-col gap-8">
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-white">
+        Mis proyectos <i class="fas fa-tasks"></i>
+      </h2>
+      <section class="flex flex-col gap-4 md:flex-row md:flex-wrap">
+        <div class="grid gap-10">
+          <article class="group grid gap-4 sm:gap-7 md:grid-cols-2">
+            <div
+              class="relative flex items-center justify-center overflow-hidden rounded-xl bg-indigo-100 dark:bg-gray-700/50"
+            >
+              <span
+                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"
+              >
+                <span
+                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"
+                >
+                  <img
+                    style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                    alt=""
+                    aria-hidden="true"
+                    src="public/project1.jpeg"
+                  />
+                </span>
+              </span>
+            </div>
+            <!--Primer Proyecto -->
+            <div class="flex flex-col justify-center gap-2.5">
+              <div class="flex flex-col justify-center gap-2.5">
+                <h3 class="text-3xl font-bold text-slate-800 dark:text-white">
+                  Game Station HN
+                </h3><p class="text-lg text-slate-600 dark:text-slate-300">
+                  Es una tienda de venta de productos de tecnología y venta de
+                  video juegos.
+                </p><div class="mb-1 flex items-center gap-2">
+                  <div class="group/tooltip relative"></div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/html.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >HTML</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/css.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >CSS</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/js.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >JavaScript</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/boostra.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >Bootstrap</span
+                    >
+                  </div>
+
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/java.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >Java</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/mysql.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >MySQL</span
+                    >
+                  </div>
+                </div><div class="flex justify-start gap-3">
+                  <a
+                    href="https://github.com/mariosamir131/WebGameStationHN.git"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group/live flex items-center gap-3 rounded-lg bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-500 transition-[gap] hover:gap-6 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+                  >
+                    Codigo
+                    <i class="fas fa-laptop-code"></i>
+                    <div
+                      class="i-fa-pro:link-simple text-xl transition-transform group-hover/live:rotate-45 sm:text-lg"
+                    >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!--Segundo Proyecto -->
+          <article class="group grid gap-4 sm:gap-7 md:grid-cols-2">
+            <div
+              class="relative flex items-center justify-center overflow-hidden rounded-xl bg-indigo-100 dark:bg-gray-700/50"
+            >
+              <span
+                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"
+              >
+                <span
+                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"
+                >
+                  <img
+                    style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                    alt=""
+                    aria-hidden="true"
+                    src="public/project3.png"
+                  />
+                </span>
+              </span>
+            </div>
+            <div class="flex flex-col justify-center gap-2.5">
+              <div class="flex flex-col justify-center gap-2.5">
+                <h3 class="text-3xl font-bold text-slate-800 dark:text-white">
+                  Mi Portafolio
+                </h3><p class="text-lg text-slate-600 dark:text-slate-300">
+                  Mi portafolio ha sido uno de mis proyectos más sorprendentes,
+                  sin duda. Ha requerido mucho trabajo y esfuerzo, demostrando
+                  verdaderamente lo que soy capaz de hacer.
+                </p><div class="mb-1 flex items-center gap-2">
+                  <div class="group/tooltip relative"></div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/html.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >HTML</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/css.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >CSS</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/typescript.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >TypeScript</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/tailwind.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >Tailwind</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/astro.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >Astro</span
+                    >
+                  </div>
+                </div>
+                <div class="flex justify-start gap-3">
+                  <a
+                    href="https://github.com/mariosamir131/miportafolio.git"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group/live flex items-center gap-3 rounded-lg bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-500 transition-[gap] hover:gap-6 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+                  >
+                    Codigo
+                    <i class="fas fa-laptop-code"></i>
+                    <div
+                      class="i-fa-pro:link-simple text-xl transition-transform group-hover/live:rotate-45 sm:text-lg"
+                    >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!--Tercer Proyecto -->
+          <article class="group grid gap-4 sm:gap-7 md:grid-cols-2">
+            <div
+              class="relative flex items-center justify-center overflow-hidden rounded-xl bg-indigo-100 dark:bg-gray-700/50"
+            >
+              <span
+                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"
+              >
+                <span
+                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"
+                >
+                  <img
+                    style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                    alt=""
+                    aria-hidden="true"
+                    src="public/project2.png"
+                  />
+                </span>
+              </span>
+            </div>
+            <div class="flex flex-col justify-center gap-2.5">
+              <div class="flex flex-col justify-center gap-2.5">
+                <h3 class="text-3xl font-bold text-slate-800 dark:text-white">
+                  ChatBot
+                </h3><p class="text-lg text-slate-600 dark:text-slate-300">
+                  Es un chatbot creado con interfaz grafica en el cual se le
+                  pueden hacer serie de preguntas de la misma manera enseñarle.
+                </p><div class="mb-1 flex items-center gap-2">
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/java.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >Java</span
+                    >
+                  </div>
+                  <div class="group/tooltip relative">
+                    <img
+                      src="public/mysql.png"
+                      width="22"
+                      height="22"
+                      class="h-6 w-7"
+                    />
+                    <span
+                      class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                      >MySQL</span
+                    >
+                  </div>
+                </div><div class="flex justify-start gap-3">
+                  <a
+                    href="https://github.com/mariosamir131/MyChatBot.git"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="group/live flex items-center gap-3 rounded-lg bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-500 transition-[gap] hover:gap-6 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+                  >
+                    Codigo
+                    <i class="fas fa-laptop-code"></i>
+                    <div
+                      class="i-fa-pro:link-simple text-xl transition-transform group-hover/live:rotate-45 sm:text-lg"
+                    >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flex flex-col gap-8">
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.linkedin.com/in/mario-samir-medina-6516282a9/"
+                target="_blank"
+                rel="noreferrer"
+                class="shadow-social-link dark:shadow-social-link-dark flex h-16 items-center gap-3 rounded-xl px-4 font-bold text-sky-600 transition-shadow"
+                style="transition: box-shadow 0.3s ease;"
+                onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
+                onmouseout="this.style.boxShadow = '';"
+              >
+                <img src="public/linkedin.png" width="30" height="30" alt="" />
+                Linkedin
+              </a>
+              <a
+                href="https://github.com/mariosamir131"
+                target="_blank"
+                rel="noreferrer"
+                class="shadow-social-link dark:shadow-social-link-dark hover:shadow-social-link-hover dark:hover:shadow-social-link-hover-dark flex h-16 items-center gap-3 rounded-xl px-4 font-bold text-black/80 transition-shadow dark:text-white/80"
+                style="transition: box-shadow 0.3s ease;"
+                onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
+                onmouseout="this.style.boxShadow = '';"
+                ><img
+                  src="public/github.png"
+                  width="40"
+                  height="40"
+                  alt=""
+                />Github<!-- --></a
+              >
+              <a
+                href="https://www.instagram.com/samirmedina131?igsh=ZGdtYjNwdmhjdnM="
+                target="_blank"
+                rel="noreferrer"
+                class="shadow-social-link dark:shadow-social-link-dark hover:shadow-social-link-hover dark:hover:shadow-social-link-hover-dark flex h-16 items-center gap-3 rounded-xl px-4 font-bold text-[color_de_instagram] transition-shadow"
+                style="transition: box-shadow 0.3s ease;"
+                onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
+                onmouseout="this.style.boxShadow = '';"
+              >
+                <img src="public/instagram.png" width="50" height="50" alt="" />
+                Instagram
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="w-full">
+        <header
+          class="mb-6 flex items-center gap-3 text-2xl font-bold text-indigo-400 dark:text-gray-100"
+        >
+          <h2>Correo Electronico</h2><div class="i-fa-pro:envelope text-3xl">
+          </div>
+        </header><div class="flex gap-2">
+          <input
+            type="text"
+            disabled=""
+            class="grid w-full place-items-center rounded-lg bg-black/5 px-3 py-1.5 text-slate-600 dark:bg-white/5 dark:text-slate-300"
+            value="mariosamir131@gmail.com"
+          /><div class="flex gap-2">
+            <div class="group/tooltip relative">
+              <a
+                href="mailto:mariosamir131@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                class="flex rounded-lg bg-indigo-100 px-4 py-2.5 text-indigo-500 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+                ><i class="fas fa-paper-plane"></i>
+              </a><span
+                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                >Enviar Correo</span
+              >
+            </div><div class="group/tooltip relative">
+              <button
+                class="flex rounded-lg bg-indigo-100 px-4 py-2.5 text-indigo-500 hover:bg-opacity-80 dark:bg-indigo-500 dark:text-indigo-100 hover:dark:bg-opacity-90"
+                ><i class="fas fa-copy"></i>
+              </button><span
+                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+                >Copiar Email</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</Layout>
