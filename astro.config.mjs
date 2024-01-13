@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import { SITE_URL } from "./src/data/config";
-import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   integrations: [tailwind(), sitemap(), robotsTxt()],
@@ -12,15 +11,7 @@ export default defineConfig({
     syntaxHighlight: "shiki",
     shikiConfig: {
       theme: "nord",
-      wrap: false,
-      output: 'server',
-      adapter: vercel(),
+      wrap: false
     }
   }
 });
-
-module.exports = {
-  imageService: {
-    enabled: true,
-  },
-};
