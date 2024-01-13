@@ -59,120 +59,119 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
           class="w-auto max-w-[50ch] text-lg leading-6 text-slate-600 dark:text-slate-300"
           set:html={convertAsteriskToStrongTag(presentationE.description)}
         />
-          <div class="flex gap-3">
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/html.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >HTML</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/css.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >CSS</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/boostra.png"
-                width="22"
-                height="22"
-                class="h-11 w-12"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >Bootstrap</span
-              >
-            </div>
-
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/java.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >Java</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/c++.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >C++</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/github.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >Github</span
-              >
-            </div>
+        <div class="flex gap-3">
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/html.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >HTML</span
+            >
           </div>
-          <div class="flex gap-3">
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/mysql.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >MySQL</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/oracle.png"
-                width="22"
-                height="22"
-                class="h-11 w-11"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >Oracle</span
-              >
-            </div>
-            <div class="group/tooltip relative">
-              <img
-                src="/public/img/sqlserver.png"
-                width="22"
-                height="22"
-                class="h-11 w-12"
-              />
-              <span
-                class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
-                >SQL Server</span
-              >
-            </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/css.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >CSS</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/boostra.png"
+              width="22"
+              height="22"
+              class="h-11 w-12"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Bootstrap</span
+            >
           </div>
 
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/java.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Java</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/c++.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >C++</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/github.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Github</span
+            >
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/mysql.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >MySQL</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/oracle.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >Oracle</span
+            >
+          </div>
+          <div class="group/tooltip relative">
+            <img
+              src="/public/img/sqlserver.png"
+              width="22"
+              height="22"
+              class="h-11 w-12"
+            />
+            <span
+              class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
+              >SQL Server</span
+            >
+          </div>
+        </div>
 
         <h2
           class="w-auto max-w-[50ch] text-lg leading-6 text-slate-600 dark:text-slate-300"
@@ -181,7 +180,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
         <!--Codigo de tecnologias que estoy aprendiendo -->
         <div class="flex gap-3">
           <div class="group/tooltip relative">
-            <img src="/public/img/js.png" width="22" height="22" class="h-11 w-11" />
+            <img
+              src="/public/img/js.png"
+              width="22"
+              height="22"
+              class="h-11 w-11"
+            />
             <span
               class="before:dark:gray-800 pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 -translate-y-0 whitespace-nowrap rounded-md bg-gray-800 px-1.5 py-1 text-xs text-gray-200 opacity-0 transition-all before:absolute before:-bottom-1 before:left-1/2 before:-z-10 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rotate-45 before:rounded-sm before:bg-gray-800 before:content-[''] group-hover/tooltip:-translate-y-3 group-hover/tooltip:opacity-100 dark:bg-white dark:text-gray-700 before:dark:bg-white"
               >JavaScript</span
@@ -250,6 +254,8 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                     alt=""
                     aria-hidden="true"
                     src="/public/img/project1.jpeg"
+                    class="translate-x-4 translate-y-4 rounded-lg transition-all duration-500 group-hover:translate-x-7 group-hover:translate-y-7"
+                   
                   />
                 </span>
               </span>
@@ -372,6 +378,8 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                     alt=""
                     aria-hidden="true"
                     src="/public/img/project3.png"
+                    class="translate-x-4 translate-y-4 rounded-lg transition-all duration-500 group-hover:translate-x-7 group-hover:translate-y-7"
+                   
                   />
                 </span>
               </span>
@@ -465,7 +473,6 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
               </div>
             </div>
           </article>
-
           <!--Tercer Proyecto -->
           <article class="group grid gap-4 sm:gap-7 md:grid-cols-2">
             <div
@@ -482,6 +489,8 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                     alt=""
                     aria-hidden="true"
                     src="/public/img/project2.png"
+                    class="translate-x-4 translate-y-4 rounded-lg transition-all duration-500 group-hover:translate-x-7 group-hover:translate-y-7"
+                   
                   />
                 </span>
               </span>
@@ -537,7 +546,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
             </div>
           </article>
           <h2 class="text-3xl font-bold text-slate-800 dark:text-white">
-            Redes Sociales  <i class="fas fa-share-alt"></i>
+            Redes Sociales <i class="fas fa-share-alt"></i>
           </h2>
           <article class="flex flex-col gap-8">
             <div class="flex flex-wrap gap-3">
@@ -550,7 +559,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                 onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
                 onmouseout="this.style.boxShadow = '';"
               >
-                <img src="/public/img/linkedin.png" width="30" height="30" alt="" />
+                <img
+                  src="/public/img/linkedin.png"
+                  width="30"
+                  height="30"
+                  alt=""
+                />
                 Linkedin
               </a>
               <a
@@ -577,7 +591,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                 onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
                 onmouseout="this.style.boxShadow = '';"
               >
-                <img src="/public/img/instagram.png" width="50" height="50" alt="" />
+                <img
+                  src="/public/img/instagram.png"
+                  width="50"
+                  height="50"
+                  alt=""
+                />
                 Instagram
               </a>
               <a
@@ -589,7 +608,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
                 onmouseover="this.style.boxShadow = '0 0 0 2px #6366f1';"
                 onmouseout="this.style.boxShadow = '';"
               >
-                <img src="/public/img/twitter.png" width="50" height="50" alt="" />
+                <img
+                  src="/public/img/twitter.png"
+                  width="50"
+                  height="50"
+                  alt=""
+                />
                 Twitter
               </a>
             </div>
